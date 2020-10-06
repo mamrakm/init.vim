@@ -85,7 +85,7 @@ let g:fzf_colors =
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 "}}}
 
-Plug 'wolfgangmehner/awk-support'
+" Plug 'wolfgangmehner/awk-support'
 call plug#end()
 
 " open new split panes to right and below
@@ -106,6 +106,8 @@ set syntax
 syntax enable
 set number
 set autoindent
+set smartindent
+
 set expandtab
 set shiftwidth=4
 set smarttab
