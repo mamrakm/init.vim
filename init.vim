@@ -26,13 +26,10 @@ let g:ycm_key_invoke_completion = '<c-j>'
 let g:ycm_complete_in_strings = 1
  
 
-Plug 'junegunn/fzf.vim', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 set rtp+=~/.fzf
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 " An action can be a reference to a function that processes selected lines
 function! s:build_quickfix_list(lines)
@@ -40,13 +37,13 @@ function! s:build_quickfix_list(lines)
   copen
   cc
 endfunction
-
+"{{{
 let g:fzf_action = {
   \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }"
-
+"}}}
 "{{{
 " Default fzf layout
 " - down / up / left / right / window
